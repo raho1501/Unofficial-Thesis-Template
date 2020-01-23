@@ -1,0 +1,113 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage{blindtext}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[titletoc]{appendix}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[yyyymmdd]{datetime}
+\tcbset{width=\textwidth,boxrule=0pt,colback=yellow,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
+\renewcommand*\contentsname{Table of Contents}
+\renewcommand{\dateseparator}{-}
+\begin{document}
+\newgeometry{left=1.2cm,right=1.2cm,top=1.2cm,bottom=1.5cm}
+
+\begin{titlepage}
+\fontfamily{phv}\selectfont
+\begin{tcolorbox}
+
+\vspace{58ex}
+\hspace*{6ex} \LARGE{\textbf{Master's thesis}}\\
+\hspace*{3.2ex} \textit{\large{Two years}}\\
+\vspace{4ex}
+
+
+
+\hspace*{3.3ex} \normalsize{Datateknik}\\
+\hspace*{6ex} \textit{Computer Engineering}\\
+
+
+\hspace*{6ex} \textbf{Title}\\
+\hspace*{6.2ex} Subtitle\\
+
+
+\hspace*{6ex} \textbf{Name}\\
+\vspace{10ex}
+\end{tcolorbox}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Illustrations/miunlogo.png}
+    \label{fig:my_label}
+\end{figure}
+\end{titlepage}
+\restoregeometry
+\vspace*{\fill}
+\noindent\textbf{MID SWEDEN UNIVERSITY}\\
+Department of Information and Communication Systems\\
+\textbf{Examiner:} Name Surname, name.surname@miun.se\\
+\textbf{University supervisor:} Name Surname, name.surname@miun.se\\
+\textbf{Company supervisor:} Name Surname, name.surname@company.se\\
+\textbf{Author:} Name Surname, xxxxYYYY@student.miun.se\\
+\textbf{Degree programme:} Civil engineering Computer Science, 300 credits\\
+\textbf{Main field of study:} Computer Engineering\\
+\textbf{Semester, year:} Spring, 2020  \\
+\newpage
+\newgeometry{top=3cm,bottom=3cm}
+\pagenumbering{roman}
+\begin{abstract}
+    
+\end{abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\newpage
+\section*{Acknowledgement}
+
+\addcontentsline{toc}{chapter}{Acknowledgement}
+\newpage
+\tableofcontents
+\newpage
+\section*{Terminology}
+
+
+\addcontentsline{toc}{chapter}{Terminology}
+\newpage
+\pagestyle{fancy}
+\fancyhead[R]{\today}
+\fancyhead[L]{Title - Subtitle\\Chapter \thechapter}
+\fancyfoot[C]{\thepage}
+\pagenumbering{arabic}
+\chapter{Introduction}
+    \input{Chapters/1_Intro.tex}
+    \newpage
+\chapter{Theory}
+    \input{Chapters/2_Theory.tex}
+    \newpage
+\chapter{Methodology}
+    \input{Chapters/3_Method.tex}
+    \newpage
+\chapter{Implementation}
+    \input{Chapters/4_Implementation.tex}
+    \newpage
+\chapter{Results}
+    \input{Chapters/5_Results.tex}
+    \newpage
+\chapter{Conclusions}
+    \input{Chapters/6_Conclusions.tex}
+
+
+\newpage
+\bibliography{ref} 
+\bibliographystyle{ieeetr}
+
+\appendix
+\begin{appendices}
+  \chapter{Source code}
+  \input{Chapters/A_Appendix.tex}
+  \chapter{Larger illustrations}
+  
+\end{appendices}
+\end{document}
