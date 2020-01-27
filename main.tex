@@ -26,11 +26,11 @@
 \usepackage{titlesec}
 \titleformat{\chapter}
     {\normalfont\sffamily\huge\bfseries\color{black}}
-    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{0pt}{-35pt}{10pt}
+    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{0pt}{-12pt}{4pt}
 \titleformat{\section}
   {\normalfont\sffamily\Large\bfseries\color{black}}
   {\thesection}{1em}{}
-
+\renewcommand{\baselinestretch}{1.05}
   \fancypagestyle{plain}{%
   \fancyhead[R]{Chapter \thechapter\\\today}
   \fancyhead[L]{Title - Subtitle\\Name Surname}
@@ -44,14 +44,14 @@
 \fontfamily{phv}\selectfont
 \begin{tcolorbox}
 
-\vspace{58ex}
-\hspace*{6ex} \LARGE{\textbf{Master's thesis}}\\
-\hspace*{3.2ex} \textit{\large{Two years}}\\
-\vspace{4ex}
+\vspace{48ex}
+\hspace*{6.8ex} \LARGE{\textbf{Master's thesis}}\\
+\hspace*{2.4ex} \textit{\large{Two years}}\\
+\vspace{3ex}
 
 
 
-\hspace*{3.3ex} \normalsize{Datateknik}\\
+\hspace*{2.7ex} \normalsize{Datateknik}\\
 \hspace*{6ex} \textit{Computer Engineering}\\
 
 
@@ -60,7 +60,7 @@
 
 
 \hspace*{6ex} \textbf{Name}\\
-\vspace{10ex}
+\vspace{6ex}
 \end{tcolorbox}
 \begin{figure}[h]
     \centering
@@ -80,9 +80,14 @@ Department of Information and Communication Systems\\
 \textbf{Main field of study:} Computer Engineering\\
 \textbf{Semester, year:} Spring, 2020  \\
 \newpage
-\newgeometry{left=4cm,right=4cm,top=3cm,bottom=4cm}
-\pagenumbering{roman}
+\newgeometry{left=3.7cm,right=3.7cm,top=3.47cm,bottom=2.34cm}
 }
+\pagenumbering{roman}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[R]{Chapter \thechapter\\\today}
+\fancyhead[L]{Title - Subtitle\\Name Surname}
+\fancyfoot[C]{\thepage}
 \begin{abstract}
     
 \end{abstract}
@@ -93,10 +98,6 @@ Department of Information and Communication Systems\\
 \addcontentsline{toc}{chapter}{Acknowledgments}
 \newpage
 \tableofcontents
-\pagestyle{fancy}
-\fancyhead[R]{Chapter \thechapter\\\today}
-\fancyhead[L]{Title - Subtitle\\Author}
-\fancyfoot[C]{\thepage}
 \newpage
 \section*{Terminology}
 
