@@ -12,8 +12,9 @@
 \usepackage{enumitem}
 \usepackage[yyyymmdd]{datetime}
 \usepackage[nottoc,numbib]{tocbibind}
-\tcbset{width=\textwidth,boxrule=0pt,colback=yellow,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
-\renewcommand*\contentsname{Table of Contents}
+\definecolor{miunYellow}{RGB}{245, 213, 23}
+\tcbset{width=\textwidth,boxrule=0pt,colback=miunYellow,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
+\renewcommand*\contentsname{\hspace{40pt}\bfseries Table of Contents\hfill}
 \renewcommand{\dateseparator}{-}
 
 \usepackage{fontspec}
@@ -27,11 +28,15 @@
 \usepackage{titlesec}
 \titleformat{\chapter}
     {\normalfont\sffamily\huge\bfseries\color{black}}
-    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{0pt}{-12pt}{4pt}
+    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{-42pt}{-12pt}{4pt}
 \titleformat{\section}
   {\normalfont\sffamily\Large\bfseries\color{black}}
-  {\thesection}{1em}{}
-\renewcommand{\baselinestretch}{1.05}
+  {\thesection}{1em}{}\titlespacing*{\section}{-35pt}{10pt}{6pt}
+\titleformat{\subsection}
+  {\normalfont\sffamily\large\bfseries\color{black}}
+  {\thesubsection}{1em}{}\titlespacing*{\subsection}{-39pt}{10pt}{6pt}
+  %{\thesection}{1em}{}
+\renewcommand{\baselinestretch}{1.1}
 
 % Redefine the plain page style
 \fancypagestyle{plain}{%
@@ -90,20 +95,23 @@ Department of Information and Communication Systems\\
 \fancyhead[R]{Chapter \thechapter\\\today}
 \fancyhead[L]{Title - Subtitle\\Name Surname}
 \fancyfoot[C]{\thepage}
-\begin{abstract}
+
+\section*{\hspace*{35pt}\Huge{Abstract}}
     
-\end{abstract}
+
 \addcontentsline{toc}{chapter}{Abstract}
 \newpage
 
-\section*{Acknowledgments}
+\section*{\hspace*{35pt}\Huge{Acknowledgments}}
 
 \addcontentsline{toc}{chapter}{Acknowledgments}
 \newpage
-\tableofcontents
-
+{
+\sffamily\tableofcontents
+}
+\addcontentsline{toc}{chapter}{Table of Contents}
 \newpage
-\section*{Terminology}
+\section*{\hspace*{35pt}\Huge{Terminology}}
 
 
 \addcontentsline{toc}{chapter}{Terminology}
