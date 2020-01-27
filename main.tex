@@ -15,9 +15,25 @@
 \tcbset{width=\textwidth,boxrule=0pt,colback=yellow,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
 \renewcommand*\contentsname{Table of Contents}
 \renewcommand{\dateseparator}{-}
+\usepackage{fontspec}
+\usepackage{mathpazo}
+\setmainfont
+     [ BoldFont       = texgyrepagella-bold.otf ,
+       ItalicFont     = texgyrepagella-italic.otf ,
+       BoldItalicFont = texgyrepagella-bolditalic.otf ]
+     {texgyrepagella-regular.otf}
+\setsansfont{Arial}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\sffamily\huge\bfseries\color{black}}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}
+  {\normalfont\sffamily\Large\bfseries\color{black}}
+  {\thesection}{1em}{}
+
 \begin{document}
 \newgeometry{left=1.2cm,right=1.2cm,top=1.2cm,bottom=1.5cm}
-
+{\sffamily
 \begin{titlepage}
 \fontfamily{phv}\selectfont
 \begin{tcolorbox}
@@ -60,14 +76,15 @@ Department of Information and Communication Systems\\
 \newpage
 \newgeometry{top=3cm,bottom=4cm}
 \pagenumbering{roman}
+}
 \begin{abstract}
     
 \end{abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 \newpage
-\section*{Acknowledgement}
+\section*{Acknowledgments}
 
-\addcontentsline{toc}{chapter}{Acknowledgement}
+\addcontentsline{toc}{chapter}{Acknowledgments}
 \newpage
 \tableofcontents
 \pagestyle{fancy}
