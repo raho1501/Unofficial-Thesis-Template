@@ -24,12 +24,18 @@
      {texgyrepagella-regular.otf}
 \setsansfont{Arial}
 \usepackage{titlesec}
-\titleformat{\chapter}[display]
-  {\normalfont\sffamily\huge\bfseries\color{black}}
-  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\chapter}
+    {\normalfont\sffamily\huge\bfseries\color{black}}
+    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{0pt}{-35pt}{10pt}
 \titleformat{\section}
   {\normalfont\sffamily\Large\bfseries\color{black}}
   {\thesection}{1em}{}
+
+  \fancypagestyle{plain}{%
+  \fancyhead[R]{Chapter \thechapter\\\today}
+  \fancyhead[L]{Title - Subtitle\\Name Surname}
+  \fancyfoot[C]{\thepage}
+}
 
 \begin{document}
 \newgeometry{left=1.2cm,right=1.2cm,top=1.2cm,bottom=1.5cm}
@@ -74,7 +80,7 @@ Department of Information and Communication Systems\\
 \textbf{Main field of study:} Computer Engineering\\
 \textbf{Semester, year:} Spring, 2020  \\
 \newpage
-\newgeometry{top=3cm,bottom=4cm}
+\newgeometry{left=4cm,right=4cm,top=3cm,bottom=4cm}
 \pagenumbering{roman}
 }
 \begin{abstract}
