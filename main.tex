@@ -15,6 +15,7 @@
 \tcbset{width=\textwidth,boxrule=0pt,colback=yellow,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
 \renewcommand*\contentsname{Table of Contents}
 \renewcommand{\dateseparator}{-}
+
 \usepackage{fontspec}
 \usepackage{mathpazo}
 \setmainfont
@@ -31,27 +32,28 @@
   {\normalfont\sffamily\Large\bfseries\color{black}}
   {\thesection}{1em}{}
 \renewcommand{\baselinestretch}{1.05}
-  \fancypagestyle{plain}{%
-  \fancyhead[R]{Chapter \thechapter\\\today}
-  \fancyhead[L]{Title - Subtitle\\Name Surname}
-  \fancyfoot[C]{\thepage}
+
+% Redefine the plain page style
+\fancypagestyle{plain}{%
+    \fancyhead[R]{Chapter \thechapter\\\today}
+    \fancyhead[L]{Title - Subtitle\\Name Surname}
+    \fancyfoot[C]{\thepage}
 }
 
 \begin{document}
-\newgeometry{left=1.2cm,right=1.2cm,top=1.2cm,bottom=1.5cm}
+%\titleformat{\chapter}{\sffamily\huge}{\thechapter.}{20pt}{\huge\it}
 {\sffamily
+\newgeometry{left=1.2cm,right=1.2cm,top=1.2cm,bottom=1.5cm}
 \begin{titlepage}
-\fontfamily{phv}\selectfont
+%\fontfamily{phv}\selectfont
 \begin{tcolorbox}
 
 \vspace{48ex}
-\hspace*{6.8ex} \LARGE{\textbf{Master's thesis}}\\
-\hspace*{2.4ex} \textit{\large{Two years}}\\
+\hspace*{6.8ex} \Huge{\textbf{Master's thesis}}\\
+\hspace*{2.4ex} \textit{\LARGE{Two years}}\\
 \vspace{3ex}
 
-
-
-\hspace*{2.7ex} \normalsize{Datateknik}\\
+\hspace*{2.7ex} \large{Datateknik}\\
 \hspace*{6ex} \textit{Computer Engineering}\\
 
 
@@ -59,7 +61,7 @@
 \hspace*{6.2ex} Subtitle\\
 
 
-\hspace*{6ex} \textbf{Name}\\
+\hspace*{6ex} \textbf{Name Surname}\\
 \vspace{6ex}
 \end{tcolorbox}
 \begin{figure}[h]
@@ -78,7 +80,7 @@ Department of Information and Communication Systems\\
 \textbf{Author:} Name Surname, xxxxYYYY@student.miun.se\\
 \textbf{Degree programme:} Civil engineering Computer Science, 300 credits\\
 \textbf{Main field of study:} Computer Engineering\\
-\textbf{Semester, year:} Spring, 2020  \\
+\textbf{Semester, year:} Spring, ZZZZ  \\
 \newpage
 \newgeometry{left=3.7cm,right=3.7cm,top=3.47cm,bottom=2.34cm}
 }
@@ -93,11 +95,13 @@ Department of Information and Communication Systems\\
 \end{abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 \newpage
+
 \section*{Acknowledgments}
 
 \addcontentsline{toc}{chapter}{Acknowledgments}
 \newpage
 \tableofcontents
+
 \newpage
 \section*{Terminology}
 
