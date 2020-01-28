@@ -2,7 +2,7 @@
 Thesis template for master thesis in latex.
 Created it since there were no official template
 available at my university and only unofficial ones.
-Thought I would compete with those so here is mt attempt.
+Thought I would compete with those so here is my attempt.
 Use with caution and the XeLatex-compiler.
 Or just import it into overleaf, works fine* there.
 
