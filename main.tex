@@ -42,7 +42,7 @@
 \fancypagestyle{plain}{%
     \fancyhead[R]{\today}
     \fancyhead[L]{Title - Subtitle\\Name Surname}
-    \fancyfoot[C]{\thepage}
+    \fancyfoot[C]{\vspace*{-1.5\baselineskip}\thepage}
 }
 
 \begin{document}
@@ -76,8 +76,10 @@
 \end{figure}
 \end{titlepage}
 \restoregeometry
+\newgeometry{left=3.7cm,right=3.7cm,top=3.48cm,bottom=3.34cm}
 \vspace*{\fill}
 \noindent\textbf{MID SWEDEN UNIVERSITY}\\
+\small{
 Department of Information and Communication Systems\\
 \textbf{Examiner:} Name Surname, name.surname@miun.se\\
 \textbf{University supervisor:} Name Surname, name.surname@miun.se\\
@@ -85,16 +87,16 @@ Department of Information and Communication Systems\\
 \textbf{Author:} Name Surname, xxxxYYYY@student.miun.se\\
 \textbf{Degree programme:} Civil engineering Computer Science, 300 credits\\
 \textbf{Main field of study:} Computer Engineering\\
-\textbf{Semester, year:} Spring, ZZZZ  \\
+\textbf{Semester, year:} Spring, ZZZZ  \\}
 \newpage
-\newgeometry{left=3.7cm,right=3.7cm,top=3.47cm,bottom=2.34cm}
 }
+\newgeometry{left=3.7cm,right=3.7cm,top=3.48cm,bottom=3.34cm}
 \pagenumbering{roman}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[R]{\today}
 \fancyhead[L]{Title - Subtitle\\Name Surname}
-\fancyfoot[C]{\thepage}
+\fancyfoot[C]{\vspace*{-1.5\baselineskip}\thepage}
 
 \chapter*{\hspace*{42pt}\Huge{Abstract}}
     \input{Chapters/0_Abstract.tex}
