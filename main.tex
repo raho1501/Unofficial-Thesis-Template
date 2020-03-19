@@ -10,8 +10,12 @@
 \usepackage[titletoc]{appendix}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{algorithm2e}
+\usepackage{caption}
 \usepackage[yyyymmdd]{datetime}
-\usepackage[nottoc,numbib]{tocbibind}
+\usepackage[nottoc, numbib]{tocbibind}
+\usepackage[titles]{tocloft}
 \definecolor{miunYellow}{RGB}{245, 213, 23}
 \tcbset{width=\textwidth,boxrule=0pt,colback=miunYellow,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
 \renewcommand*\contentsname{\hspace{40pt}\bfseries Table of Contents\hfill}
@@ -19,6 +23,7 @@
 
 \usepackage{fontspec}
 \usepackage{mathpazo}
+\defaultfontfeatures{LetterSpace=1.4}
 \setmainfont
      [ BoldFont       = texgyrepagella-bold.otf ,
        ItalicFont     = texgyrepagella-italic.otf ,
@@ -34,7 +39,7 @@
   {\thesection}{1em}{}\titlespacing*{\section}{-42pt}{10pt}{6pt}
 \titleformat{\subsection}
   {\normalfont\sffamily\large\bfseries\color{black}}
-  {\thesubsection}{1em}{}\titlespacing*{\subsection}{-46pt}{10pt}{6pt}
+  {\thesubsection}{1em}{}\titlespacing*{\subsection}{-48pt}{10pt}{6pt}
   %{\thesection}{1em}{}
 \renewcommand{\baselinestretch}{1.1}
 
@@ -46,81 +51,86 @@
 }
 
 \begin{document}
+\pagenumbering{roman}
+
 %\titleformat{\chapter}{\sffamily\huge}{\thechapter.}{20pt}{\huge\it}
 {\sffamily
-\newgeometry{left=1.2cm,right=1.2cm,top=1.2cm,bottom=1.5cm}
+\newgeometry{left=2.2cm,right=2.2cm,top=1cm,bottom=0.1cm}
 \begin{titlepage}
 %\fontfamily{phv}\selectfont
 \begin{tcolorbox}
 
 \vspace{38ex}
-\hspace*{6.8ex} \Huge{\textbf{Master's thesis}}\\
-\hspace*{2.8ex} \textit{\LARGE{Two years}}\\
-\vspace{2ex}
+\hspace*{5.4ex} \LARGE{\textbf{Master's thesis}}\\
+\hspace*{2.8ex} \textit{\Large{Two years}}\\
+\vspace{3ex}
 
-\hspace*{3.2ex} \large{Datateknik}\\
-\hspace*{6ex} \textit{Computer Engineering}\\
+\hspace*{3ex} \small{Datateknik}\\
+\hspace*{6.1ex} \textit{Computer Engineering}\\
 
+\hspace*{6.4ex} \textbf{Title}\\
+\hspace*{6.6ex} Subtitle\\
 
-\hspace*{6ex} \textbf{Title}\\
-\hspace*{6.2ex} Subtitle\\
-
-
-\hspace*{6.2ex} \textbf{Name Surname}\\
-\vspace{2ex}
+\hspace*{6.4ex} \textbf{Name Surname}\\
+\vspace{19ex}
 \end{tcolorbox}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.5\textwidth,trim=4 4 4 4,clip]{Illustrations/miunlogo.png}
-    \label{fig:my_label}
+    \includegraphics[width=0.55\textwidth,trim=4 4 4 4,clip]{Illustrations/miunlogo.png}
+    \label{fig:miunlogo}
 \end{figure}
 \end{titlepage}
+\setcounter{page}{2}
 \restoregeometry
 \newgeometry{left=4.3cm,right=4.3cm,top=3.7cm,bottom=3.7cm}
 \vspace*{\fill}
 \noindent\textbf{MID SWEDEN UNIVERSITY}\\
-\small{
+\footnotesize{
 Department of Information and Communication Systems\\
 \textbf{Examiner:} Name Surname, name.surname@miun.se\\
 \textbf{University supervisor:} Name Surname, name.surname@miun.se\\
-\textbf{Company supervisor:} Name Surname, name.surname@company.se\\
+\textbf{Company supervisor:} Name Surname, Name.surname@company.se\\
 \textbf{Author:} Name Surname, xxxxYYYY@student.miun.se\\
 \textbf{Degree programme:} Civil engineering Computer Science, 300 credits\\
 \textbf{Main field of study:} Computer Engineering\\
-\textbf{Semester, year:} Spring, ZZZZ  \\}
+\textbf{Semester, year:} Spring, year  \\}
+\vspace{10ex}
 \newpage
+
 }
 \newgeometry{left=4.3cm,right=4.3cm,top=3.7cm,bottom=3.7cm}
-\pagenumbering{roman}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[R]{\today}
-\fancyhead[L]{Title - Subtitle\\Name Surname}
+\fancyhead[L]{Title - Subtitle?\\Name Surname}
 \fancyfoot[C]{\vspace*{-1.6\baselineskip}\thepage}
 
 \chapter*{\hspace*{42pt}\Huge{Abstract}}
-    \input{Chapters/0_Abstract.tex}
-
+    \input{Chapters/0_Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 \newpage
 
 \section*{\hspace*{42pt}\Huge{Acknowledgments}}
-    \input{Chapters/0_Acknowledgements.tex}
+    \input{Chapters/0_Acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgments}
 \newpage
 {
+\setlength{\cftbeforechapskip}{3pt}
+\setlength{\cftsecindent}{0pt}% Remove indent for \section
+\setlength{\cftsubsecindent}{0pt}% Remove indent for \subsection
+\setlength{\cftsubsubsecindent}{0pt}
 \sffamily\tableofcontents
 }
 \addcontentsline{toc}{chapter}{Table of Contents}
 \newpage
 \section*{\hspace*{42pt}\Huge{Terminology}}
-    \input{Chapters/0_Terminology.tex}
+    \input{Chapters/0_Terminology}
 
 \addcontentsline{toc}{chapter}{Terminology}
 \newpage
 \pagenumbering{arabic}
-\fontdimen2\font=1.05ex
-\fontdimen3\font=1.05ex
+\fontdimen2\font=4pt
+\fontdimen3\font=5pt
 \chapter{Introduction}
     \input{Chapters/1_Intro.tex}
     \newpage
@@ -147,9 +157,9 @@ Department of Information and Communication Systems\\
 
 \appendix
 \begin{appendices}
-  \chapter{Source code}
-  \input{Chapters/A_Appendix.tex}
-  \chapter{Larger illustrations}
-  
+\chapter{Source code}
+    \input{Chapters/A_Appendix.tex}
+\chapter{Larger illustrations}
+    %\input{your .tex-file here}
 \end{appendices}
 \end{document}
