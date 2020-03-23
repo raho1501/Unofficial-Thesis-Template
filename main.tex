@@ -14,7 +14,7 @@
 \usepackage{algorithm2e}
 \usepackage{caption}
 \usepackage[yyyymmdd]{datetime}
-\usepackage[nottoc, numbib]{tocbibind}
+\usepackage[nottoc]{tocbibind}
 \usepackage[titles]{tocloft}
 \definecolor{miunYellow}{RGB}{245, 213, 23}
 \tcbset{width=\textwidth,boxrule=0pt,colback=miunYellow,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
@@ -33,10 +33,10 @@
 \usepackage{titlesec}
 \titleformat{\chapter}
     {\normalfont\sffamily\huge\bfseries\color{black}}
-    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{-42pt}{-12pt}{-4pt}
+    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{-42pt}{-12pt}{-2pt}
 \titleformat{\section}
   {\normalfont\sffamily\Large\bfseries\color{black}}
-  {\thesection}{1em}{}\titlespacing*{\section}{-42pt}{-4pt}{-10pt}
+  {\thesection}{1em}{}\titlespacing*{\section}{-42pt}{-4pt}{6pt}
 \titleformat{\subsection}
   {\normalfont\sffamily\large\bfseries\color{black}}
   {\thesubsection}{1em}{}\titlespacing*{\subsection}{-48pt}{2pt}{-8pt}
@@ -102,7 +102,7 @@ Department of Information and Communication Systems\\
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[R]{\today}
-\fancyhead[L]{Title - Subtitle?\\Name Surname}
+\fancyhead[L]{Title - Subtitle\\Name Surname}
 \fancyfoot[C]{\vspace*{-1.6\baselineskip}\thepage}
 
 \chapter*{\hspace*{42pt}\Huge{Abstract}}
@@ -133,7 +133,13 @@ Department of Information and Communication Systems\\
 \fontdimen3\font=5pt
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1.1em}
-
+\titleformat{\chapter}
+    {\normalfont\sffamily\huge\bfseries\color{black}}
+    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{-42pt}{-32pt}{-12pt}
+\titleformat{\section}
+  {\normalfont\sffamily\Large\bfseries\color{black}}
+  {\thesection}{1em}{}\titlespacing*{\section}{-42pt}{-4pt}{-10pt}
+  
 \chapter{Introduction}
     \input{Chapters/1_Intro.tex}
     \newpage
@@ -154,7 +160,7 @@ Department of Information and Communication Systems\\
 
 
 \newpage
-\renewcommand{\bibname}{References}
+\renewcommand{\bibname}{\hspace*{42pt}References}
 \bibliography{ref} 
 \bibliographystyle{ieeetr}
 
