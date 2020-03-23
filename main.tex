@@ -33,13 +33,13 @@
 \usepackage{titlesec}
 \titleformat{\chapter}
     {\normalfont\sffamily\huge\bfseries\color{black}}
-    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{-42pt}{-12pt}{4pt}
+    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{-42pt}{-12pt}{-4pt}
 \titleformat{\section}
   {\normalfont\sffamily\Large\bfseries\color{black}}
-  {\thesection}{1em}{}\titlespacing*{\section}{-42pt}{10pt}{6pt}
+  {\thesection}{1em}{}\titlespacing*{\section}{-42pt}{-4pt}{-10pt}
 \titleformat{\subsection}
   {\normalfont\sffamily\large\bfseries\color{black}}
-  {\thesubsection}{1em}{}\titlespacing*{\subsection}{-48pt}{10pt}{6pt}
+  {\thesubsection}{1em}{}\titlespacing*{\subsection}{-48pt}{2pt}{-8pt}
   %{\thesection}{1em}{}
 \renewcommand{\baselinestretch}{1.1}
 
@@ -131,6 +131,9 @@ Department of Information and Communication Systems\\
 \pagenumbering{arabic}
 \fontdimen2\font=4pt
 \fontdimen3\font=5pt
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1.1em}
+
 \chapter{Introduction}
     \input{Chapters/1_Intro.tex}
     \newpage
