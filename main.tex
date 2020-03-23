@@ -14,8 +14,9 @@
 \usepackage{algorithm2e}
 \usepackage{caption}
 \usepackage[yyyymmdd]{datetime}
-\usepackage[nottoc]{tocbibind}
+\usepackage[nottoc,notbib]{tocbibind}
 \usepackage[titles]{tocloft}
+
 \definecolor{miunYellow}{RGB}{245, 213, 23}
 \tcbset{width=\textwidth,boxrule=0pt,colback=miunYellow,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
 \renewcommand*\contentsname{\hspace{40pt}\bfseries Table of Contents\hfill}
@@ -160,7 +161,8 @@ Department of Information and Communication Systems\\
 
 
 \newpage
-\renewcommand{\bibname}{\hspace*{42pt}References}
+\renewcommand{\bibname}{\hspace{42pt}References} 
+\addcontentsline{toc}{chapter}{\normalsize{References}} 
 \bibliography{ref} 
 \bibliographystyle{ieeetr}
 
