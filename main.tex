@@ -1,4 +1,4 @@
-\documentclass[12pt]{report}
+\documentclass[12pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{blindtext}
 \usepackage{xcolor}
@@ -17,8 +17,8 @@
 \usepackage[nottoc,notbib]{tocbibind}
 \usepackage[titles]{tocloft}
 
-\definecolor{miunYellow}{RGB}{245, 213, 23}
-\tcbset{width=\textwidth,boxrule=0pt,colback=miunYellow,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
+%\definecolor{miunYellow}{RGB}{245, 213, 23}
+%\tcbset{width=\textwidth,boxrule=0pt,colback=miunYellow,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
 \renewcommand*\contentsname{\hspace{40pt}\bfseries Table of Contents\hfill}
 \renewcommand{\dateseparator}{-}
 
@@ -50,56 +50,49 @@
     \fancyhead[L]{Title - Subtitle\\Name Surname}
     \fancyfoot[C]{\vspace*{-1.6\baselineskip}\thepage}
 }
-
+\usepackage[absolute,overlay]{textpos}
 \begin{document}
 \pagenumbering{roman}
 
 %\titleformat{\chapter}{\sffamily\huge}{\thechapter.}{20pt}{\huge\it}
 {\sffamily
-\newgeometry{left=2.2cm,right=2.2cm,top=1cm,bottom=0.1cm}
+\newgeometry{left=3.7cm,right=3.7cm,top=3.7cm,bottom=2.7cm}
 \begin{titlepage}
 %\fontfamily{phv}\selectfont
-\begin{tcolorbox}
+{
+\begin{textblock*}{13cm}(14.5cm,1.6cm) % {block width} (coords)
+\includegraphics[width=4.1cm,height=1.85cm]{Illustrations/miun-mini-logo.png}
+\end{textblock*}
+}
+\vspace*{9ex}
+\noindent\Large{\textbf{Title}}\\
 
-\vspace{38ex}
-\hspace*{5.4ex} \LARGE{\textbf{Master's thesis}}\\
-\hspace*{2.8ex} \textit{\Large{Two years}}\\
-\vspace{3ex}
+\vspace*{-1ex}
+\hspace{-2ex}\normalsize{Subtitle}\\
+\vspace{3.5ex}
 
-\hspace*{3ex} \small{Datateknik}\\
-\hspace*{6.1ex} \textit{Computer Engineering}\\
+\hspace{-2.7ex}\normalsize{Author}\\
+\vspace{56ex}
 
-\hspace*{6.4ex} \textbf{Title}\\
-\hspace*{6.6ex} Subtitle\\
-
-\hspace*{6.4ex} \textbf{Name Surname}\\
-\vspace{19ex}
-\end{tcolorbox}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.55\textwidth,trim=4 4 4 4,clip]{Illustrations/miunlogo.png}
-    \label{fig:miunlogo}
-\end{figure}
+\scriptsize{
+\noindent\vspace*{1ex}
+Thesis - Institution of Information Systems and Technology\\\vspace*{0.6ex}
+Main field of study: Computer Engineering\\\vspace*{0.6ex}
+Credits: 300\\\vspace*{0.6ex}
+Semester, year: Spring, year  \\\vspace*{0.6ex}
+Supervisor: Name Surname, name.surname@miun.se\\\vspace*{0.6ex}
+Examiner: Name Surname, name.surname@miun.se\\\vspace*{0.6ex}
+Course code/registration number: DTxxxA\\\vspace*{0.6ex}
+Degree programme: Civil engineering Computer Science\\
+}
 \end{titlepage}
 \setcounter{page}{2}
 \restoregeometry
-\newgeometry{left=4.3cm,right=4.3cm,top=3.7cm,bottom=3.7cm}
-\vspace*{\fill}
-\noindent\textbf{MID SWEDEN UNIVERSITY}\\
-\footnotesize{
-Department of Information and Communication Systems\\
-\textbf{Examiner:} Name Surname, name.surname@miun.se\\
-\textbf{University supervisor:} Name Surname, name.surname@miun.se\\
-\textbf{Company supervisor:} Name Surname, Name.surname@company.se\\
-\textbf{Author:} Name Surname, xxxxYYYY@student.miun.se\\
-\textbf{Degree programme:} Civil engineering Computer Science, 300 credits\\
-\textbf{Main field of study:} Computer Engineering\\
-\textbf{Semester, year:} Spring, year  \\}
-\vspace{10ex}
+\newgeometry{left=3.7cm,right=3.7cm,top=3.7cm,bottom=3.7cm}
 \newpage
 
 }
-\newgeometry{left=4.3cm,right=4.3cm,top=3.7cm,bottom=3.7cm}
+\newgeometry{left=3.7cm,right=3.7cm,top=3.7cm,bottom=3.7cm}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[R]{\today}

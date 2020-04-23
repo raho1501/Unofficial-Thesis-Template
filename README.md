@@ -1,5 +1,8 @@
 # Unofficial-Thesis-Template
+
 Thesis template for master thesis in latex.
+*If the older version with the yellow frontpage is wanted 
+it can be found in a separate branch.*
 Created it since there were no official template
 available at my university and only unofficial ones.
 Thought I would compete with those so here is my attempt.
