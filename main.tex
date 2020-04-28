@@ -3,6 +3,8 @@
 \usepackage{blindtext}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
 \usepackage{hyperref}
 \usepackage{tcolorbox}
 \usepackage{geometry}
@@ -14,11 +16,8 @@
 \usepackage{algorithm2e}
 \usepackage{caption}
 \usepackage[yyyymmdd]{datetime}
-\usepackage[nottoc,notbib]{tocbibind}
+\usepackage[nottoc, notbib]{tocbibind}
 \usepackage[titles]{tocloft}
-
-%\definecolor{miunYellow}{RGB}{245, 213, 23}
-%\tcbset{width=\textwidth,boxrule=0pt,colback=miunYellow,arc=0pt,auto outer arc,left=0pt,right=0pt,boxsep=5pt}
 \renewcommand*\contentsname{\hspace{40pt}\bfseries Table of Contents\hfill}
 \renewcommand{\dateseparator}{-}
 
@@ -34,13 +33,13 @@
 \usepackage{titlesec}
 \titleformat{\chapter}
     {\normalfont\sffamily\huge\bfseries\color{black}}
-    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{-42pt}{-12pt}{-2pt}
+    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{-42pt}{-32pt}{-12pt}
 \titleformat{\section}
   {\normalfont\sffamily\Large\bfseries\color{black}}
-  {\thesection}{1em}{}\titlespacing*{\section}{-42pt}{-4pt}{6pt}
+  {\thesection}{1em}{}\titlespacing*{\section}{-42pt}{-2pt}{-12pt}
 \titleformat{\subsection}
   {\normalfont\sffamily\large\bfseries\color{black}}
-  {\thesubsection}{1em}{}\titlespacing*{\subsection}{-48pt}{2pt}{-8pt}
+  {\thesubsection}{1em}{}\titlespacing*{\subsection}{-48pt}{2pt}{-12pt}
   %{\thesection}{1em}{}
 \renewcommand{\baselinestretch}{1.1}
 
@@ -56,9 +55,8 @@
 
 %\titleformat{\chapter}{\sffamily\huge}{\thechapter.}{20pt}{\huge\it}
 {\sffamily
-\newgeometry{left=3.7cm,right=3.7cm,top=3.7cm,bottom=2.7cm}
+\newgeometry{left=3.6cm,right=3.6cm,top=3.6cm,bottom=2.7cm}
 \begin{titlepage}
-%\fontfamily{phv}\selectfont
 {
 \begin{textblock*}{13cm}(14.5cm,1.6cm) % {block width} (coords)
 \includegraphics[width=4.1cm,height=1.85cm]{Illustrations/miun-mini-logo.png}
@@ -75,36 +73,37 @@
 \vspace{56ex}
 
 \scriptsize{
-\noindent\vspace*{1ex}
+\noindent\vspace*{0.6ex}
 Thesis - Institution of Information Systems and Technology\\\vspace*{0.6ex}
 Main field of study: Computer Engineering\\\vspace*{0.6ex}
 Credits: 300\\\vspace*{0.6ex}
 Semester, year: Spring, year  \\\vspace*{0.6ex}
 Supervisor: Name Surname, name.surname@miun.se\\\vspace*{0.6ex}
 Examiner: Name Surname, name.surname@miun.se\\\vspace*{0.6ex}
-Course code/registration number: DTxxxA\\\vspace*{0.6ex}
+Course code/registration number: DT005A\\\vspace*{0.5ex}
 Degree programme: Civil engineering Computer Science\\
 }
 \end{titlepage}
 \setcounter{page}{2}
 \restoregeometry
-\newgeometry{left=3.7cm,right=3.7cm,top=3.7cm,bottom=3.7cm}
 \newpage
-
 }
-\newgeometry{left=3.7cm,right=3.7cm,top=3.7cm,bottom=3.7cm}
+\newgeometry{left=3.7cm,right=3.7cm,top=3.7cm,bottom=4.2cm}
 \pagestyle{fancy}
 \fancyhead{}
 \fancyhead[R]{\today}
 \fancyhead[L]{Title - Subtitle\\Name Surname}
-\fancyfoot[C]{\vspace*{-1.6\baselineskip}\thepage}
-
-\chapter*{\hspace*{42pt}\Huge{Abstract}}
+\fancyfoot[C]{\vspace*{-0.1\baselineskip}\thepage}
+\vspace*{0.1ex}
+\section*{\hspace*{42pt}\Huge{Abstract}}
+    \vspace*{2ex}
     \input{Chapters/0_Abstract}
+\addtocontents{toc}{\protect\vspace{0.5cm}}
 \addcontentsline{toc}{chapter}{Abstract}
 \newpage
 
 \section*{\hspace*{42pt}\Huge{Acknowledgments}}
+    \vspace*{2ex}
     \input{Chapters/0_Acknowledgements}
 \addcontentsline{toc}{chapter}{Acknowledgments}
 \newpage
@@ -118,8 +117,9 @@ Degree programme: Civil engineering Computer Science\\
 \addcontentsline{toc}{chapter}{Table of Contents}
 \newpage
 \section*{\hspace*{42pt}\Huge{Terminology}}
+    \vspace*{2ex}
     \input{Chapters/0_Terminology}
-
+\protect\vspace{-1.5cm}
 \addcontentsline{toc}{chapter}{Terminology}
 \newpage
 \pagenumbering{arabic}
@@ -127,12 +127,6 @@ Degree programme: Civil engineering Computer Science\\
 \fontdimen3\font=5pt
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1.1em}
-\titleformat{\chapter}
-    {\normalfont\sffamily\huge\bfseries\color{black}}
-    {\Huge{\thechapter.}}{20pt}{\Huge}\titlespacing*{\chapter}{-42pt}{-32pt}{-12pt}
-\titleformat{\section}
-  {\normalfont\sffamily\Large\bfseries\color{black}}
-  {\thesection}{1em}{}\titlespacing*{\section}{-42pt}{-4pt}{-10pt}
   
 \chapter{Introduction}
     \input{Chapters/1_Intro.tex}
