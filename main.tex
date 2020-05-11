@@ -18,6 +18,7 @@
 \usepackage[yyyymmdd]{datetime}
 \usepackage[nottoc, notbib]{tocbibind}
 \usepackage[titles]{tocloft}
+\usepackage[backend=biber,sorting=none]{biblatex}
 \renewcommand*\contentsname{\hspace{40pt}\bfseries Table of Contents\hfill}
 \renewcommand{\dateseparator}{-}
 
@@ -150,8 +151,7 @@ Degree programme: Civil engineering Computer Science\\
 \newpage
 \renewcommand{\bibname}{\hspace{42pt}References} 
 \addcontentsline{toc}{chapter}{\normalsize{References}} 
-\bibliography{ref} 
-\bibliographystyle{ieeetr}
+\printbibliography
 
 \appendix
 \begin{appendices}
